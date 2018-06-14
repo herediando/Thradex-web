@@ -1,0 +1,18 @@
+--SLIDER--
+slide 1 https://i.imgur.com/3Ef0K4o.jpg
+slide 2 https://i.imgur.com/b5AhWwB.jpg
+slide 3 https://i.imgur.com/ltzkOxa.jpg
+
+--CLIENTES--
+telefonica https://i.imgur.com/MDtdcF3.png
+level 3 https://i.imgur.com/AqZqsas.png
+cisco https://i.imgur.com/HAlSN71.png
+ciena https://i.imgur.com/D0WjSmK.png
+claro https://i.imgur.com/IhGn6T0.png
+telxius https://i.imgur.com/XR0a4I0.png
+logicalis https://i.imgur.com/GifNst2.png
+
+-HOW TO FUCKING LOAD AN IMAGE IN VUETIFY-
+:src = "require('@/assets/yourfuckingimg.png')"
+
+font: Raleway
