@@ -5,16 +5,18 @@
   <div class="section">
     <v-layout row wrap class="text-xs-center">
     <v-flex xs10 offset-xs1>
-    <h1><span class="green-header">Nuestros </span>Servicios</h1>
-    <v-container grid-list-xl>
-      <v-layout row wrap justify-space-around>
-        <v-flex xs4 class="text-xs-center" v-for="(servicio, i) in servicios" :key="i">
-            <img src="../assets/cubito-naranja.png" alt="">
-            <h2>{{servicio.titulo}}</h2>
-            <p>{{servicio.descripcion}}</p>
-        </v-flex>
-      </v-layout>
-    </v-container>
+    <div class="unit-wrapper">
+      <h1><span class="green-header">Nuestros </span>Servicios</h1>
+      <v-container grid-list-xl>
+        <v-layout row wrap justify-space-around>
+          <v-flex xs4 class="text-xs-center" v-for="(servicio, i) in servicios" :key="i">
+              <img src="../assets/cubito-naranja.png" alt="">
+              <h2>{{servicio.titulo}}</h2>
+              <p>{{servicio.descripcion}}</p>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
     </v-flex>
   </v-layout>
   </div>
@@ -80,5 +82,9 @@ h1 {
 }
 .unidad-image {
   width: 100%;
+}
+
+.unit-wrapper {
+  border-left:12px #ffa726 solid;
 }
 </style>

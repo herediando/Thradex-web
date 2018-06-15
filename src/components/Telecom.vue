@@ -44,38 +44,44 @@
   <div class="section">
     <v-layout row wrap class="text-xs-center">
     <v-flex xs10 offset-xs1>
-      <h1><span class="blue-header">Nuestros </span>Servicios</h1>
-     <v-container grid-list-xl>
-      <v-layout row wrap justify-space-around>
-        <v-flex xs6 class="text-xs-center" v-for="(servicio, i) in servicios" :key="i">
-            <img src="../assets/cubito-azul.png">
-            <h2>{{servicio.titulo}}</h2>
-            <p>{{servicio.descripcion}}</p>
-        </v-flex>
-      </v-layout>
-    </v-container>
+      <div class="unit-wrapper mt-5">
+        <h1><span class="blue-header mt-2">Nuestros </span>Servicios</h1>
+        <v-container grid-list-xl>
+          <v-layout row wrap justify-space-around>
+            <v-flex xs6 class="text-xs-center" v-for="(servicio, i) in servicios" :key="i">
+                <img src="../assets/cubito-azul.png">
+                <h2>{{servicio.titulo}}</h2>
+                <p>{{servicio.descripcion}}</p>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </div>
     </v-flex>
   </v-layout>
   </div>
   <div class="section">
     <v-layout class="text-xs-center">
       <v-flex xs10 offset-xs1>
-      <h1><span class="blue-header">Nuestros </span>Proyectos</h1>
-      <p>Thradex está involucrada en diversas actividades comerciales,beneficiándose del conocimiento de mercado
-        adquirido y de las habilidades profesionales <br> de sus colaboradores. Llevando a cabo
-         proyectos en ingeniería de telecomunicaciones y de construcción</p>
-      <v-flex xs12>
-        <v-container grid-list-xs>
-          <v-layout justify-space-around row wrap>
-            <v-flex sm12 md6 v-for="(proyecto,i ) in proyectos" :key="i">
-              <div class="img__wrap">
-                <h2 class="img__description">{{proyecto.description}}</h2>
-                <img class="img__img" :src="require(`@/assets/telecom/proyectos/${proyecto.src}.jpg`)" alt="">
-              </div>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </v-flex>
+        <div class="unit-wrapper mt-5">
+          <h1><span class="blue-header">Nuestros </span>Proyectos</h1>
+          <v-flex xs6 offset-xs3>
+            <p>Thradex está involucrada en diversas actividades comerciales,beneficiándose del conocimiento de mercado
+              adquirido y de las habilidades profesionales <br> de sus colaboradores. Llevando a cabo
+              proyectos en ingeniería de telecomunicaciones y de construcción</p>
+          </v-flex>
+          <v-flex xs12>
+            <v-container grid-list-xs>
+              <v-layout justify-space-around row wrap>
+                <v-flex sm12 md6 v-for="(proyecto,i ) in proyectos" :key="i">
+                  <div class="img__wrap">
+                    <h2 class="img__description">{{proyecto.description}}</h2>
+                    <img class="img__img" :src="require(`@/assets/telecom/proyectos/${proyecto.src}.jpg`)" alt="">
+                  </div>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-flex>
+      </div>
       </v-flex>
     </v-layout>
   </div>
@@ -218,4 +224,6 @@ h1 {
 .img__img {
   max-width: 95%;
 }
+
+
 </style>
