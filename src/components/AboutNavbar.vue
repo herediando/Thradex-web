@@ -15,6 +15,8 @@ export default {
     items: [
       { prefijo: "nuestra ", name: "historia", route: "/historia" },
       { prefijo: "lo ", name: "que hacemos", route: "/lo-que-hacemos" },
+      { prefijo: "", name: "principios", route: "/principios" },
+      { prefijo: "", name: "certificaciones", route: "/certificaciones" },
       // { name: "donde trabajamos", route: "/donde" },
       { prefijo: "nuestros ", name: "clientes", route: "/nuestros-clientes" }
     ]

@@ -2,13 +2,13 @@
 <footer id="footer" class="mt-5">
   <img src="../assets/footer-image.png" class="footer-image" alt="">
   <v-layout row wrap>
-    <v-flex d-flex xs2>
-      <v-card color="grey darken-3">
+    <!-- <v-flex d-flex xs2>
+      <v-card color="grey">
         <v-card-text>
         </v-card-text>
       </v-card>
-    </v-flex>
-    <v-flex d-flex xs10>
+    </v-flex> -->
+    <v-flex d-flex xs12>
       <v-card dark color="grey">
         <v-card-text>
          <v-container grid-list-xl>
@@ -20,8 +20,9 @@
               <v-flex xs12 md4>
                 <h2>OFICINAS</h2>
                 <span><strong>PERÚ</strong></span><br>
-                <span>Calle las Dalias No. 381 Urb. Armendariz Lima - Lima - Miraflores<br>
-                <v-icon>mdi-phone</v-icon>+511 7059675</span><br> <br>
+                <span>Calle Libertad No. 174 Oficina 407 Miraflores - Lima<br>
+                <v-icon>mdi-phone</v-icon>+511 763-4953</span><br> <br>
+                <v-icon>mdi-email</v-icon>info@thradex.com</span><br> <br>
                 <span ><strong>BRASIL</strong></span> <br>
                 <span>R Barbosa da Cunha, 779 - Sala: 6; Jardim Guanabara - Campinas/SP 13.073-320</span><br><br>
                 <span><strong>ESTADOS UNIDOS</strong></span><br>

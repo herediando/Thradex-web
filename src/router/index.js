@@ -35,6 +35,14 @@ const routerOptions = [{
     path: '/lo-que-hacemos',
     component: 'LoQueHacemos'
   },
+  {
+    path: '/principios',
+    component: 'Principios'
+  },
+  {
+    path: '/certificaciones',
+    component: 'Certificaciones'
+  },
 ]
 const routes = routerOptions.map(route => {
   return {

@@ -1,13 +1,15 @@
 <template>
-<div>
-  <Navbar :settings="settings" />
-  <img class="unidad-image" src="../assets/idea-telecom.png" alt="">
-  <div class="section">
-    <v-layout row wrap class="text-xs-center">
-    <v-flex xs10 offset-xs1>
-      <h1><span class="blue-header">Lo </span>que <span class="blue-header">hacemos</span></h1>
-    </v-flex>
-     <div class="fondo text-xs-center">
+  <div>
+    <Navbar :settings="settings" />
+    <img
+      class="unidad-image"
+      src="../assets/fondo-black-logo.png"
+      height="600"
+    />
+    <div class="section">
+      <!-- <v-layout row wrap class="text-xs-center">
+
+    <div class="fondo text-xs-center">
         <v-carousel hide-delimiters>
         <v-carousel-item>
         <div class="frase-container">
@@ -38,54 +40,73 @@
           </div>
           </v-carousel-item>
         </v-carousel>
-      </div>
-  </v-layout>
-  </div>
-  <div class="section">
-    <v-layout row wrap class="text-xs-center">
-    <v-flex xs10 offset-xs1>
-      <div class="unit-wrapper mt-5">
-        <h1><span class="blue-header mt-2">Nuestros </span>Servicios</h1>
-        <v-container grid-list-xl>
-          <v-layout row wrap justify-space-around>
-            <v-flex xs6 class="text-xs-center" v-for="(servicio, i) in servicios" :key="i">
-                <img src="../assets/cubito-azul.png">
-                <h2>{{servicio.titulo}}</h2>
-                <p>{{servicio.descripcion}}</p>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </div>
-    </v-flex>
-  </v-layout>
-  </div>
-  <div class="section">
-    <v-layout class="text-xs-center">
-      <v-flex xs10 offset-xs1>
-        <div class="unit-wrapper mt-5">
-          <h1><span class="blue-header">Nuestros </span>Proyectos</h1>
-          <v-flex xs6 offset-xs3>
-            <p>Thradex está involucrada en diversas actividades comerciales,beneficiándose del conocimiento de mercado
-              adquirido y de las habilidades profesionales <br> de sus colaboradores. Llevando a cabo
-              proyectos en ingeniería de telecomunicaciones y de construcción</p>
-          </v-flex>
-          <v-flex xs12>
-            <v-container grid-list-xs>
-              <v-layout justify-space-around row wrap>
-                <v-flex sm12 md6 v-for="(proyecto,i ) in proyectos" :key="i">
-                  <div class="img__wrap">
-                    <h2 class="img__description">{{proyecto.description}}</h2>
-                    <img class="img__img" :src="require(`@/assets/telecom/proyectos/${proyecto.src}.jpg`)" alt="">
-                  </div>
+      </div> 
+  </v-layout>-->
+    </div>
+    <div class="section">
+      <v-layout row wrap class="text-xs-center">
+        <v-flex xs10 offset-xs1>
+          <div class="unit-wrapper mt-5">
+            <h1><span class="black-header mt-2">Nuestros Servicios </span></h1>
+            <v-container grid-list-xl>
+              <v-layout row wrap justify-space-around>
+                <v-flex
+                  xs6
+                  class="text-xs-center"
+                  v-for="(servicio, i) in servicios"
+                  :key="i"
+                >
+                  <v-icon class="ico">{{ servicio.icono }}</v-icon>
+                  <h2>
+                    <span class="black-header">{{ servicio.titulo }}</span>
+                  </h2>
+                  <p>{{ servicio.descripcion }}</p>
                 </v-flex>
               </v-layout>
             </v-container>
-          </v-flex>
-      </div>
+          </div>
+        </v-flex>
+      </v-layout>
+    </div>
+    <div class="section text-xs-center">
+      <v-flex xs10 offset-xs1>
+        <h1><span class="black-header">Nuestros Proyectos</span></h1>
+        <p>
+          Thradex está involucrada en diversas actividades
+          comerciales,beneficiándose del conocimiento de mercado adquirido y de
+          las habilidades profesionales de sus colaboradores. Llevando a cabo
+          proyectos en ingeniería de telecomunicaciones y de construcción
+        </p>
       </v-flex>
-    </v-layout>
-  </div>
-  <!-- <div class="section">
+      <v-layout class="text-xs-center">
+        <v-flex xs10 offset-xs1>
+          <div class="unit-wrapper mt-5">
+            <v-flex xs12>
+              <v-container grid-list-xs>
+                <v-layout justify-space-around row wrap>
+                  <v-flex sm12 md6 v-for="(proyecto, i) in proyectos" :key="i">
+                    <h2><span class="img__description">{{ proyecto.description }}</span></h2>
+                    <div class="img__wrap">
+                      <img
+                        class="wr img__img"
+                        :src="
+                          require(`@/assets/telecom/proyectos/${proyecto.src}.jpg`)
+                        "
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <div class="text"></div>
+                      </div>
+                    </div>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-flex>
+          </div>
+        </v-flex>
+      </v-layout>
+    </div>
+    <!-- <div class="section">
     <v-layout row wrap class="text-xs-center">
     <v-flex xs10 offset-xs1>
     <h1><span class="blue-header">Nuestros </span>Servicios</h1>
@@ -120,7 +141,7 @@
     </v-flex>
   </v-layout>
   </div> -->
-</div>
+  </div>
 </template>
 <script>
 import Navbar from "@/components/Navbar";
@@ -132,27 +153,31 @@ export default {
       dark: false
     },
     proyectos: [
-      { description: "Servicios de Operación y Mantenimiento - NCS", src: "1" },
       { description: "Diseño e implementacion de Datacenters", src: "2" },
       {
         description: "Instalación de Infraestructura para Datacenters",
-        src: "3"
+        src: "7"
       },
-      { description: "Instalación de Planta de Energía DC y AC", src: "4" },
       {
-        description:
-          "Instalacion de equipos de telecomunicaciones y servidores",
+        description: "Instalacion de equipos de Telecomunicaciones",
         src: "6"
+      },
+      { description: "Servicios de Operación y Mantenimiento - NCS", src: "1" },
+      {
+        description: "Instalación de Planta de Energía DC y AC",
+        src: "4"
       }
     ],
     servicios: [
       {
-        titulo: "On Site Support Services - FLM",
+        titulo: "Soporte en Sitio - FLM",
+        icono: "mdi-sitemap",
         descripcion:
           "Proveemos servicios de Soporte en Sitio FLM y Servicios NOC que permiten a nuestros clientes, operar sus redes de forma continua y eficiente, mientras que el enfoque se mantiene en el negocio. "
       },
       {
-        titulo: "OUTSOURCING de Operaciones de Red",
+        titulo: "Operaciones de Red",
+        icono: "mdi-account",
         descripcion:
           "Nuestros servicios incluyen auditoria y optimización de procesos de O&M de acuerdo a TM Forum y con herramientas OSS customizadas al escenario y procesos de nuestros clientes"
       }
@@ -168,10 +193,9 @@ h1 {
   font-weight: 300;
   margin-bottom: 15px;
 }
-.blue-header {
-  color: #6fa8dc;
+.black-header {
+  color: #000000;
 }
-
 .section h2 {
   color: #a9a9a9;
   font-size: 30px;
@@ -180,10 +204,6 @@ h1 {
 .section p {
   color: #8a8a8a;
   font-size: 20px;
-}
-
-.cubitos-verdes {
-  margin-top: 50px;
 }
 .unidad-image {
   width: 100%;
@@ -203,27 +223,68 @@ h1 {
   height: 400px;
 }
 .fondo {
-  background: url("../assets/fondo-black.png") no-repeat;
-  background-size: cover;
+  /* background: url("../assets/fondo-black.png") no-repeat; */
+  /* background-size: cover; */
   width: 100%;
 }
 .fondo .small-text {
-  color: rgb(235, 235, 235);
+  color: rgb(0, 0, 0);
 }
 .frase-container {
   margin-top: 20px;
 }
-
-.img__wrap h2 {
-  font-size: 1.5em;
+.img__description {
+  font-size: 0.8em;
+  color:#000000;
   margin-bottom: 5px;
 }
 .img__wrap {
   margin: 20px;
+  position: relative;
 }
 .img__img {
-  max-width: 95%;
+   display: block;
+  width: 100%;
+  height: auto;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #0000005e;
 }
 
+.img__wrap:hover .overlay {
+  opacity: 1;
+}
 
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.ico {
+  /* margin: 50px; */
+  padding: 20px;
+  /* background-color: lightgreen; */
+  font-size: 500%;
+}
+.ico:hover {
+  /* margin: 50px; */
+  padding: 23px;
+  background-color: rgb(182, 193, 255);
+  font-size: 500%;
+}
 </style>
