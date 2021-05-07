@@ -2,30 +2,35 @@
 <div>
   <Navbar :settings="settings" />
   <img class="unidad-image" src="../assets/idea-construccion.png" alt="">
-  <div class="section">
+  <!-- <div class="section">
     <v-layout row wrap class="text-xs-center">
       <v-flex xs10 offset-xs1>
-        <h1><span class="green-header">Lo</span> que <span class="green-header">hacemos</span></h1>
+        <h1><span class="black-header">Lo que hacemos</span></h1>
       </v-flex>
         <v-flex xs12 class="full__mensaje">
           <v-flex xs8 offset-xs2 >
-            <p>Brindamos soluciones integrales que abarcan todo el ciclo de vida de los proyectos, mediante equipos multidisciplinarios de ingeniería, procura y gerencia de construcción</p>
+            <p>Brindamos soluciones integrales que abarcan todo el ciclo de vida de los proyectos, 
+              mediante equipos multidisciplinarios de ingeniería, procura y gerencia de construcción</p>
+              <p>
+                Desarrollamos diversos proyectos de infraestructura en el Perú para el sector público y privado,
+                 principalmente en obras de infraestructura civil y de telecomunicaciones
+              </p>
           </v-flex>
         </v-flex>
     </v-layout>
-  </div>
+  </div> -->
     <div class="section">
     <v-layout row wrap class="text-xs-center">
     <v-flex xs10 offset-xs1>
     <div class="unit-wrapper">
-      <h1><span class="green-header">Nuestros </span>Servicios</h1>
+      <h1><span class="black-header">Nuestros Servicios</span></h1>
       <v-flex xs8 offset-xs2>
         <p>Desde el 2011, la división de infraestructura y construcción ha experimentado un gran crecimiento, sobretodo en  el desarrollo de proyectos de obras civiles, saneamiento e infraestructura</p>
       </v-flex>
       <v-container grid-list-xl>
         <v-layout row wrap justify-space-around>
           <v-flex xs4 class="text-xs-center" v-for="(servicio, i) in servicios" :key="i">
-              <img src="../assets/cubito-azul.png" alt="">
+              <v-icon class="ico">{{servicio.icono}}</v-icon>
               <h2>{{servicio.titulo}}</h2>
           </v-flex>
         </v-layout>
@@ -60,9 +65,11 @@ export default {
       {src: 'tmi'}
     ],
     servicios: [
-      {titulo: "Infraestructura de Telecomunicaciones"},
-      {titulo: "Infraestructura Civil"},
-      {titulo: "Consultoría"}
+      {titulo: "Infraestructura de Telecomunicaciones",
+        icono: "mdi-access-point-network"      
+      },
+      {titulo: "Infraestructura Civil",icono: "mdi-city"  },
+      {titulo: "Consultoría", icono: "mdi-desktop-mac"  }
      ]
   }),
   components: {Navbar, Carousel}
@@ -75,8 +82,8 @@ h1 {
   font-weight: 300;
   margin-bottom: 40px;
 }
-.green-header {
-  color: #2196f3;
+.black-header {
+  color: #000000;
 }
 
 .section {
@@ -108,5 +115,17 @@ h1 {
   border-top: 1px dashed #a9a9a9;
   border-bottom: 1px dashed #a9a9a9;
   padding: 22px
+}
+.ico {
+  /* margin: 50px; */
+  padding: 20px;
+  /* background-color: lightgreen; */
+  font-size: 500%;
+}
+.ico:hover {
+  /* margin: 50px; */
+  padding: 23px;
+  background-color: rgb(134, 150, 243);
+  font-size: 500%;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-    <v-toolbar flat color="grey darken-4" dense dark>
+    <!-- <v-toolbar flat color="grey darken-4" dense dark>
     <div>
       <span class="hidden-sm-and-down mr-3"><v-icon class="pr-1">mdi-phone</v-icon>(+511) 7059675 - 2237880</span>
       <span class="hidden-xs-only mr-2"><v-icon class="pr-1">mdi-email</v-icon>info@thradex.com</span>
@@ -25,32 +25,39 @@
     <v-btn icon>
       <v-icon>mdi-skype</v-icon>
     </v-btn>
-  </v-toolbar>
-  <v-toolbar :dark="settings.dark" :color="settings.color">
+  </v-toolbar> -->
+  <v-toolbar :dark="settings.dark" :color="settings.color" class="header">
     <v-btn to="/" v-if="this.$route.path!=='/'" icon>
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
     <v-toolbar-title class="home-logo mr-5"><img  @click="goHome" width="200px;" class="pt-2 ml-2" :src="require(`@/assets/${settings.logo}.png`)" alt=""></v-toolbar-title>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-menu offset-y>
-        <v-btn flat slot="activator">About</v-btn>
+        <!-- <v-btn flat>HOME</v-btn> -->
+        <v-btn flat slot="activator">Nosotros</v-btn>
         <v-list class="pt-0">
-          <v-list-tile to="/historia">
+          <!-- <v-list-tile to="/historia">
             Nuestra historia
+          </v-list-tile> -->
+          <v-list-tile to="/principios">
+            Principios
           </v-list-tile>
-          <v-list-tile to="/lo-que-hacemos">
+          <!-- <v-list-tile to="/lo-que-hacemos">
             Lo que hacemos
-          </v-list-tile>
+          </v-list-tile> -->
           <!-- <v-list-tile to="/donde">
             Dónde trabajamos
           </v-list-tile> -->
-          <v-list-tile to="/nuestros-clientes">
+          <!-- <v-list-tile to="/nuestros-clientes">
             Nuestros clientes
+          </v-list-tile> -->
+          <v-list-tile to="/certificaciones">
+            Certificaciones
           </v-list-tile>
         </v-list>
       </v-menu>
-      <v-menu offset-y>
-        <v-btn flat slot="activator">Services</v-btn>
+      <!-- <v-menu offset-y>
+        <v-btn flat slot="activator">Servicios</v-btn>
         <v-list>
           <v-list-tile @click="goPage(unidad.route)" avatar v-for="(unidad,i) in unidades" :key="i">
             <v-list-tile-avatar :tile="true">
@@ -61,9 +68,10 @@
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
-      </v-menu>
+      </v-menu> -->
       <!-- <v-btn flat>Projects</v-btn> -->
-      <v-btn flat href="#footer">Contact us</v-btn>
+      <v-btn flat href="#">RESPONSABILIDAD SOCIAL</v-btn>
+      <!-- <v-btn flat href="#footer">Contactenos</v-btn> -->
     </v-toolbar-items>
     <v-spacer></v-spacer>
     <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer=!drawer"></v-toolbar-side-icon>
@@ -143,7 +151,15 @@ export default {
 };
 </script>
 <style>
-.home-logo:hover {
+
+.header {
+    position: fixed;
+    text-align: right;
+    z-index: 999;
+    /* padding: 15px 20px; */
+}
+ .home-logo:hover {
   cursor: pointer;
 }
+
 </style>
